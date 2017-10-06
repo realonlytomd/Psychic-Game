@@ -26,6 +26,8 @@ document.onkeyup = function(event) {
 		wins++;
 		console.log("User wins: " + wins);
 		guessesLeft = 9;
+		allGuesses = "";
+		userGuess = "";
 		console.log("Guesses left: " + guessesLeft);
 		computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 	}
@@ -34,24 +36,24 @@ document.onkeyup = function(event) {
 				console.log("Guesses left: " + guessesLeft);
 //				console.log("No match! Please choose another letter.");
 		}
-		
+	
+	// after every guess
+	allGuesses = allGuesses + " " + userGuess;
+	//need to clear allGuesses between wins and losses.	
 
 	if (guessesLeft === 0) {
 		losses++;
 		console.log("User losses: " + losses);
 		guessesLeft = 9;
+		allGuesses = "";
 		computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 	}
-
-	// after every guess
-	allGuesses = allGuesses + ", " + userGuess;
-	//need to clear allGuesses between wins and losses.
 		
 	var html = 
 	"<p>Wins: " + wins + "</p>" +
 	"<p>Losses: " + losses + "</p>" + 
 	"<p>Guesses Left: " + guessesLeft + "</p>" +
-	"<p>Your Guesses so far: " + allGuesses + "</p>";
+	"<p>Guesses so far: " + allGuesses + "</p>";
 
 	document.querySelector("#game").innerHTML = html;
 

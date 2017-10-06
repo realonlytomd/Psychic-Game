@@ -1,4 +1,4 @@
-// Needto set up array of possible computer guesses.
+
 
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -34,12 +34,12 @@ document.onkeyup = function(event) {
 		else {
 				guessesLeft--;
 				console.log("Guesses left: " + guessesLeft);
-//				console.log("No match! Please choose another letter.");
+
 		}
 	
-	// after every guess
+	
 	allGuesses = allGuesses + " " + userGuess;
-	//need to clear allGuesses between wins and losses.	
+
 
 	if (guessesLeft === 0) {
 		losses++;
@@ -56,17 +56,6 @@ document.onkeyup = function(event) {
 	"<p>Guesses so far: " + allGuesses + "</p>";
 
 	document.querySelector("#game").innerHTML = html;
-
-//	"<p>Your Guesses so far: " + userGuess + "</p>";
-//	var yourGuesses = document.createElement("p");
-
-//	yourGuesses.innerHTML = "<p>Your Guesses so far: " + userGuess, + "</p>";
-
-//	targetDiv.appendChild(newDiv);
-
-	//append to html with comma in between
-
-
 		
 }
 
